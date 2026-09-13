@@ -6,34 +6,32 @@ import { GraduationCap, School, BookOpen } from "lucide-react";
 export const Education = () => {
   const education = [
     {
-      degree: "Bachelor of Technology — Cyber Security",
+      degree: "Bachelor of Technology — Computer Science & Engineering (Cyber Security)",
       institution: "Malla Reddy University",
       location: "Hyderabad, Telangana, India",
       duration: "2023 - 2027",
       grade: "CGPA: 8.50 / 10.0",
       status: "Currently Pursuing (4th Year)",
       description: "Specializing in Cyber Security with a focus on network defense, penetration testing, ethical hacking, and secure full-stack software development.",
+      coursework: [
+        "Data Structures & Algorithms",
+        "DBMS",
+        "Computer Networks",
+        "Web Technologies",
+        "Operating Systems",
+        "Software Engineering",
+      ],
       icon: <GraduationCap className="w-6 h-6 text-cyan-400" />,
     },
     {
-      degree: "Higher Secondary Certificate — Intermediate (XII)",
-      institution: "S.S+2 High School",
-      location: "Jharkhand, India",
+      degree: "Higher Secondary Certificate — Intermediate (Class XII)",
+      institution: "S.S. +2 High School",
+      location: "Ranchi, Jharkhand, India",
       duration: "2021 - 2023",
-      grade: "79%",
+      grade: "Higher Secondary Certificate",
       board: "Jharkhand Academic Council (JAC)",
-      description: "Completed higher secondary education specializing in Science (MPC) with strong academic standing.",
+      description: "Completed higher secondary education specializing in Science with strong academic standing.",
       icon: <School className="w-6 h-6 text-purple-400" />,
-    },
-    {
-      degree: "Secondary School Certificate (X)",
-      institution: "Kisan High School",
-      location: "Jharkhand, India",
-      duration: "2021",
-      grade: "74%",
-      board: "Jharkhand Academic Council (JAC)",
-      description: "Completed secondary school education with foundational excellence in Science and Mathematics.",
-      icon: <BookOpen className="w-6 h-6 text-emerald-400" />,
     },
   ];
 
@@ -92,9 +90,25 @@ export const Education = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="px-6 pb-6 pt-0">
-                  <p className="text-slate-300 text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+                  <p className="text-slate-300 text-sm leading-relaxed border-t border-slate-800/60 pt-3 mb-3">
                     {edu.description}
                   </p>
+                  {edu.coursework && (
+                    <div>
+                      <h4 className="text-xs uppercase tracking-wider font-semibold text-cyan-400 mb-2">Key Coursework</h4>
+                      <div className="flex flex-wrap gap-1.5">
+                        {edu.coursework.map((course, idx) => (
+                          <Badge
+                            key={idx}
+                            variant="secondary"
+                            className="bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-[11px] px-2.5 py-0.5"
+                          >
+                            {course}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             </motion.div>

@@ -5,27 +5,27 @@ import { Code2, ShieldAlert, Cpu, Wrench } from "lucide-react";
 
 export const Skills = () => {
   const technicalSkills = [
-    { name: "JavaScript (ES6+)", level: 90 },
-    { name: "React.js / Vite", level: 85 },
-    { name: "Node.js / Express.js", level: 80 },
-    { name: "MongoDB / Mongoose", level: 75 },
-    { name: "HTML5 / Tailwind CSS", level: 95 },
-    { name: "Python", level: 80 },
-    { name: "Java / Spring Boot", level: 65 },
-    { name: "MySQL / SQL Databases", level: 70 },
+    { name: "JavaScript (ES6+) / Python / Java", level: 90 },
+    { name: "React.js / Tailwind CSS / Responsive Design", level: 88 },
+    { name: "Node.js / Express.js / REST APIs", level: 85 },
+    { name: "JWT Authentication & Role-Based Access Control", level: 85 },
+    { name: "MongoDB / MySQL / PostgreSQL / Supabase", level: 80 },
+    { name: "HTML5 / CSS3 / Web Standards", level: 95 },
   ];
 
   const cyberSecuritySkills = [
-    { name: "Network Security & Protocols", level: 80 },
-    { name: "OS Security & Hardening", level: 75 },
-    { name: "Penetration Testing & Auditing", level: 70 },
-    { name: "DBMS Security & SQLi Defense", level: 80 },
+    { name: "OWASP Top 10 Security Defense", level: 88 },
+    { name: "Secure Coding & Input Validation", level: 85 },
+    { name: "Authentication & Authorization (JWT/RBAC)", level: 90 },
+    { name: "Network Security & Vulnerability Scanning", level: 80 },
+    { name: "Threat Modeling & Incident Response", level: 78 },
+    { name: "SQL Injection & XSS Prevention", level: 85 },
   ];
 
   const softSkills = [
     "Problem Solving",
     "Time Management",
-    "Leadership",
+    "Leadership & Event Organizing",
     "Team Collaboration",
     "Critical Thinking",
     "Technical Communication",
@@ -33,11 +33,11 @@ export const Skills = () => {
 
   const tools = [
     "Git & GitHub",
-    "VS Code",
     "Postman API Studio",
+    "VS Code",
+    "Linux / OS Command Line",
     "MongoDB Compass",
     "Docker / Containers",
-    "Linux / Shell Commands",
   ];
 
   return (

@@ -18,12 +18,12 @@ export const BackgroundEffects = () => {
       {/* Sleek Luminous Slate Base Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-900/95 to-slate-950" />
 
-      {/* Crisp Modern Grid Lines */}
+      {/* Crisp Modern Grid Lines extending across full page height */}
       <div 
-        className="absolute inset-0 opacity-[0.25] bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4.5rem_4.5rem]"
+        className="absolute inset-0 opacity-[0.20] bg-[linear-gradient(to_right,#38bdf8_1px,transparent_1px),linear-gradient(to_bottom,#38bdf8_1px,transparent_1px)] bg-[size:4.5rem_4.5rem]"
         style={{
-          maskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, #000 80%, transparent 100%)",
-          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 0%, #000 80%, transparent 100%)",
+          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.3) 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.85) 85%, rgba(0,0,0,0.3) 100%)",
         }}
       />
 

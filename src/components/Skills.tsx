@@ -72,10 +72,14 @@ export const Skills = () => {
                 {technicalSkills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1.5 text-sm font-medium">
-                      <span className="text-slate-300">{skill.name}</span>
-                      <span className="text-cyan-400 font-semibold">{skill.level}%</span>
+                      <span className="text-slate-200">{skill.name}</span>
+                      <span className="text-cyan-400 font-bold">{skill.level}%</span>
                     </div>
-                    <Progress value={skill.level} className="h-2 bg-slate-800" />
+                    <Progress 
+                      value={skill.level} 
+                      className="h-2.5 bg-slate-950/90 border border-slate-800" 
+                      indicatorClassName="bg-gradient-to-r from-blue-500 via-cyan-400 to-teal-300 shadow-[0_0_12px_rgba(56,189,248,0.7)]"
+                    />
                   </div>
                 ))}
               </CardContent>
@@ -98,10 +102,14 @@ export const Skills = () => {
                 {cyberSecuritySkills.map((skill) => (
                   <div key={skill.name}>
                     <div className="flex justify-between mb-1.5 text-sm font-medium">
-                      <span className="text-slate-300">{skill.name}</span>
-                      <span className="text-emerald-400 font-semibold">{skill.level}%</span>
+                      <span className="text-slate-200">{skill.name}</span>
+                      <span className="text-emerald-400 font-bold">{skill.level}%</span>
                     </div>
-                    <Progress value={skill.level} className="h-2 bg-slate-800" />
+                    <Progress 
+                      value={skill.level} 
+                      className="h-2.5 bg-slate-950/90 border border-slate-800" 
+                      indicatorClassName="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-300 shadow-[0_0_12px_rgba(16,185,129,0.7)]"
+                    />
                   </div>
                 ))}
               </CardContent>

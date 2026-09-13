@@ -1,27 +1,29 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { GraduationCap, School, BookOpen } from "lucide-react";
 
 export const Education = () => {
   const education = [
     {
-      degree: "Bachelor of Technology - Cyber Security",
+      degree: "Bachelor of Technology — Cyber Security",
       institution: "Malla Reddy University",
-      location: "Hyderabad, India",
+      location: "Hyderabad, Telangana, India",
       duration: "2023 - 2027",
-      grade: "CGPA: 8.50/10.0",
-      status: "Current",
-      description: "Specializing in Cyber Security with focus on network security, penetration testing, and secure application development.",
+      grade: "CGPA: 8.50 / 10.0",
+      status: "Currently Pursuing (4th Year)",
+      description: "Specializing in Cyber Security with a focus on network defense, penetration testing, ethical hacking, and secure full-stack software development.",
+      icon: <GraduationCap className="w-6 h-6 text-cyan-400" />,
     },
     {
-      degree: "Intermediate (XII)",
+      degree: "Higher Secondary Certificate — Intermediate (XII)",
       institution: "S.S+2 High School",
       location: "Jharkhand, India",
       duration: "2021 - 2023",
       grade: "79%",
       board: "Jharkhand Academic Council (JAC)",
-      description: "Completed higher secondary education with strong performance in science subjects.",
+      description: "Completed higher secondary education specializing in Science (MPC) with strong academic standing.",
+      icon: <School className="w-6 h-6 text-purple-400" />,
     },
     {
       degree: "Secondary School Certificate (X)",
@@ -30,58 +32,69 @@ export const Education = () => {
       duration: "2021",
       grade: "74%",
       board: "Jharkhand Academic Council (JAC)",
-      description: "Completed secondary education with focus on mathematics and science.",
+      description: "Completed secondary school education with foundational excellence in Science and Mathematics.",
+      icon: <BookOpen className="w-6 h-6 text-emerald-400" />,
     },
   ];
 
   return (
-    <section id="education" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="education" className="py-20 px-4 relative">
+      <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Education</h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto"></div>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Academic <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Education</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {education.map((edu, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
               whileInView={{ opacity: 1, x: 0 }}
+              whileHover={{ scale: 1.01 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.15 }}
             >
-              <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
-                <CardHeader>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                    <div>
-                      <CardTitle className="text-white text-xl mb-2">{edu.degree}</CardTitle>
-                      <p className="text-blue-400 font-semibold">{edu.institution}</p>
-                      <p className="text-gray-400">{edu.location}</p>
+              <Card className="bg-slate-900/60 border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/40 hover:shadow-[0_0_25px_rgba(56,189,248,0.15)] transition-all duration-300">
+                <CardHeader className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                    <div className="flex items-start gap-4">
+                      <div className="p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 shrink-0">
+                        {edu.icon}
+                      </div>
+                      <div>
+                        <CardTitle className="text-white text-xl font-bold mb-1">{edu.degree}</CardTitle>
+                        <p className="text-cyan-400 font-semibold text-sm">{edu.institution}</p>
+                        <p className="text-slate-400 text-xs mt-0.5">{edu.location}</p>
+                      </div>
                     </div>
-                    <div className="text-right">
-                      <Badge variant="outline" className="border-blue-500 text-blue-400 mb-2">
+                    <div className="md:text-right shrink-0">
+                      <Badge variant="outline" className="border-cyan-500/40 bg-cyan-500/10 text-cyan-300 mb-2 px-3 py-1 text-xs">
                         {edu.duration}
                       </Badge>
-                      <p className="text-green-400 font-semibold">{edu.grade}</p>
+                      <p className="text-emerald-400 font-bold text-sm">{edu.grade}</p>
                       {edu.status && (
-                        <Badge className="bg-green-500/20 text-green-400 mt-1">
+                        <Badge className="bg-emerald-500/20 text-emerald-300 mt-1 border border-emerald-500/30 text-[11px]">
                           {edu.status}
                         </Badge>
                       )}
                       {edu.board && (
-                        <p className="text-gray-400 text-sm mt-1">{edu.board}</p>
+                        <p className="text-slate-400 text-xs mt-1">{edu.board}</p>
                       )}
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-gray-300">{edu.description}</p>
+                <CardContent className="px-6 pb-6 pt-0">
+                  <p className="text-slate-300 text-sm leading-relaxed border-t border-slate-800/60 pt-3">
+                    {edu.description}
+                  </p>
                 </CardContent>
               </Card>
             </motion.div>

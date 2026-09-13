@@ -1,9 +1,8 @@
-
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Sparkles } from "lucide-react";
 
 interface Project {
   title: string;
@@ -106,7 +105,7 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 px-4 bg-slate-900/30">
+    <section id="projects" className="py-20 px-4 relative">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -114,11 +113,12 @@ export const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Featured Projects</h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto mb-4"></div>
-          <p className="text-gray-300 max-w-2xl mx-auto">
-            Here are some of my notable projects that showcase my skills in full-stack development, 
-            cybersecurity, and problem-solving.
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Projects</span>
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-cyan-400 to-purple-500 mx-auto rounded-full mb-4"></div>
+          <p className="text-slate-300 max-w-2xl mx-auto text-base md:text-lg">
+            Here are my featured full-stack applications and AI solutions built with modern technology stacks.
           </p>
         </motion.div>
 
@@ -128,47 +128,52 @@ export const Projects = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               className="h-full"
             >
-              <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300 h-full flex flex-col">
+              <Card className="bg-slate-900/60 border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] transition-all duration-500 h-full flex flex-col group">
                 <CardHeader>
-                  <div className="flex justify-between items-start mb-2">
-                    <CardTitle className="text-white text-xl">{project.title}</CardTitle>
+                  <div className="flex justify-between items-start mb-3 gap-2">
+                    <CardTitle className="text-white text-2xl font-bold group-hover:text-cyan-400 transition-colors duration-300">
+                      {project.title}
+                    </CardTitle>
                     <Badge 
                       variant="outline" 
-                      className="border-purple-500 text-purple-400 whitespace-nowrap"
+                      className="border-purple-500/50 bg-purple-500/10 text-purple-300 whitespace-nowrap text-xs px-2.5 py-1"
                     >
                       {project.category}
                     </Badge>
                   </div>
-                  <p className="text-gray-300 text-sm leading-relaxed">
+                  <p className="text-slate-300 text-sm leading-relaxed">
                     {project.description}
                   </p>
                 </CardHeader>
 
-                <CardContent className="flex-1 flex flex-col">
-                  <div className="mb-4">
-                    <h4 className="text-blue-400 font-semibold mb-2">Key Features:</h4>
-                    <ul className="text-gray-300 text-sm space-y-1">
+                <CardContent className="flex-1 flex flex-col space-y-4">
+                  <div>
+                    <h4 className="text-cyan-400 font-semibold text-xs uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                      <Sparkles size={14} className="text-cyan-400" /> Key Features
+                    </h4>
+                    <ul className="text-slate-300 text-sm space-y-1.5">
                       {project.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-center">
-                          <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
-                          {highlight}
+                          <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-2.5 shrink-0 shadow-[0_0_6px_#38bdf8]"></span>
+                          <span className="text-xs text-slate-300">{highlight}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
-                  <div className="mb-4">
-                    <h4 className="text-blue-400 font-semibold mb-2">Technologies:</h4>
-                    <div className="flex flex-wrap gap-2">
+                  <div>
+                    <h4 className="text-cyan-400 font-semibold text-xs uppercase tracking-wider mb-2">Technologies</h4>
+                    <div className="flex flex-wrap gap-1.5">
                       {project.technologies.map((tech, idx) => (
                         <Badge
                           key={idx}
                           variant="secondary"
-                          className="bg-blue-500/10 text-blue-300 border border-blue-500/20"
+                          className="bg-cyan-500/10 text-cyan-300 border border-cyan-500/20 text-[11px] px-2 py-0.5"
                         >
                           {tech}
                         </Badge>
@@ -176,11 +181,11 @@ export const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="mt-auto flex flex-col sm:flex-row gap-2 pt-2">
+                  <div className="mt-auto flex flex-col sm:flex-row gap-2.5 pt-4 border-t border-slate-800/60">
                     <Button
                       asChild
                       variant="outline"
-                      className={`border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white ${
+                      className={`border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:border-cyan-400 ${
                         project.demoUrl ? "flex-1" : "w-full"
                       }`}
                     >
@@ -188,24 +193,24 @@ export const Projects = () => {
                         href={project.githubUrl || "https://github.com/HarshKumar5822"} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 text-sm"
+                        className="flex items-center justify-center gap-2 text-xs font-semibold"
                       >
-                        <Github size={16} />
-                        View on GitHub
+                        <Github size={15} />
+                        View GitHub
                       </a>
                     </Button>
                     {project.demoUrl && (
                       <Button
                         asChild
-                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]"
                       >
                         <a 
                           href={project.demoUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 text-sm"
+                          className="flex items-center justify-center gap-2 text-xs font-bold"
                         >
-                          <ExternalLink size={16} />
+                          <ExternalLink size={15} />
                           View Demo
                         </a>
                       </Button>

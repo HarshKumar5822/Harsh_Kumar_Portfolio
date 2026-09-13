@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const titles = [
@@ -58,15 +58,15 @@ export const Hero = () => {
   }, [currentText, isDeleting, activeTitle]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center px-4">
+    <section id="home" className="min-h-[92vh] flex items-center justify-center px-4 relative pt-12">
       <div className="max-w-4xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className="mb-8"
         >
-          <div className="w-52 h-52 md:w-64 md:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl shadow-blue-500/30 ring-4 ring-blue-500/20 group">
+          <div className="w-52 h-52 md:w-64 md:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-cyan-400/80 shadow-[0_0_40px_rgba(56,189,248,0.4)] ring-4 ring-cyan-500/20 group relative">
             <img 
               src="/lovable-uploads/d42bfd05-3fe0-45e6-87d0-2fcb62bc8e3e.png" 
               alt="Harsh Kumar"
@@ -79,9 +79,9 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl md:text-6xl font-bold text-white mb-4"
+          className="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight"
         >
-          Hello, I'm <span className="text-blue-400">Harsh Kumar</span>
+          Hello, I'm <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Harsh Kumar</span>
         </motion.h1>
 
         <motion.p
@@ -100,46 +100,47 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto"
+          className="text-base md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          4th Year Student specializing in Cyber Security with a passion for Full Stack Web Development. 
-          Building secure, scalable applications with modern technologies.
+          4th Year Cyber Security Student at Malla Reddy University. Specializing in building secure, high-performance web applications and AI-driven solutions.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="flex flex-wrap justify-center gap-4 mb-8"
+          className="flex flex-wrap justify-center gap-4 mb-10"
         >
           <Button
             asChild
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 shadow-lg shadow-blue-500/25"
+            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-7 py-6 rounded-full shadow-[0_0_25px_rgba(56,189,248,0.4)] hover:shadow-[0_0_35px_rgba(56,189,248,0.6)] transform hover:-translate-y-0.5 transition-all duration-300"
           >
             <a 
               href="/Harsh_Kumar_Resume.pdf" 
               download="Harsh_Kumar_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2"
+              className="flex items-center gap-2 text-sm"
             >
-              <Download size={18} />
+              <Download size={18} className="stroke-[2.5]" />
               Download Resume
             </a>
           </Button>
           <Button
             variant="outline"
             asChild
-            className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 transition-all duration-300"
+            className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-7 py-6 rounded-full transition-all duration-300 text-sm font-semibold"
           >
-            <a href="#contact">Get In Touch</a>
+            <a href="#projects" className="flex items-center gap-2">
+              View Projects <ArrowRight size={16} />
+            </a>
           </Button>
           <Button
             variant="outline"
             asChild
-            className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 transition-all duration-300"
+            className="border-purple-500/40 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-7 py-6 rounded-full transition-all duration-300 text-sm font-semibold"
           >
-            <a href="#projects">View My Work</a>
+            <a href="#contact">Get In Touch</a>
           </Button>
         </motion.div>
 
@@ -153,7 +154,7 @@ export const Hero = () => {
             href="https://github.com/HarshKumar5822"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+            className="text-slate-400 hover:text-cyan-400 hover:scale-125 transition-all duration-300 p-2"
           >
             <Github size={24} />
           </a>
@@ -161,19 +162,19 @@ export const Hero = () => {
             href="https://www.linkedin.com/in/harsh-kumar-936b47293"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+            className="text-slate-400 hover:text-cyan-400 hover:scale-125 transition-all duration-300 p-2"
           >
             <Linkedin size={24} />
           </a>
           <a
             href="mailto:harshkragrawal2006@gmail.com"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+            className="text-slate-400 hover:text-cyan-400 hover:scale-125 transition-all duration-300 p-2"
           >
             <Mail size={24} />
           </a>
           <a
             href="tel:9279912147"
-            className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+            className="text-slate-400 hover:text-cyan-400 hover:scale-125 transition-all duration-300 p-2"
           >
             <Phone size={24} />
           </a>

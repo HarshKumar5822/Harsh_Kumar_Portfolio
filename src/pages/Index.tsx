@@ -11,7 +11,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden selection:bg-cyan-500 selection:text-slate-950">
+    <div className="relative min-h-screen bg-slate-900 text-slate-100 overflow-x-hidden selection:bg-cyan-500 selection:text-slate-950">
       {/* Dynamic Animated Cyber Background & Mouse Spotlight */}
       <BackgroundEffects />
 

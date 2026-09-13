@@ -163,9 +163,9 @@ export const Contact = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(56,189,248,0.3)] transition-all duration-300 flex items-center justify-center gap-2"
+                    className="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold h-12 rounded-xl shadow-lg shadow-blue-600/25 transition-all duration-200 flex items-center justify-center gap-2 border-none"
                   >
-                    <Send size={18} />
+                    <Send size={18} className="text-white" />
                     Send Message
                   </Button>
                 </form>

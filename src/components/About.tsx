@@ -48,18 +48,18 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <Card className="bg-slate-900/60 border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] transition-all duration-500 h-full">
+            <Card className="bg-slate-800/70 border-slate-700/60 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(56,189,248,0.2)] transition-all duration-500 h-full">
               <CardContent className="p-8 flex flex-col justify-center h-full">
                 <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
                   My Journey <span className="text-cyan-400">🚀</span>
                 </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-200 leading-relaxed mb-4">
                   I'm a passionate 4th-year Cyber Security student at <strong className="text-cyan-300">Malla Reddy University, Hyderabad</strong>, with a current CGPA of 8.50. Originally from Jharkhand, I've embraced the vibrant tech ecosystem of Hyderabad while pursuing my passion for cybersecurity, web development, and AI engineering.
                 </p>
-                <p className="text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-200 leading-relaxed mb-4">
                   My core expertise lies in the <strong className="text-cyan-300">MERN stack</strong>, combined with deep knowledge of security principles, network defense, penetration testing, and modern AI model integrations to craft secure, high-performance web applications.
                 </p>
-                <p className="text-slate-300 leading-relaxed">
+                <p className="text-slate-200 leading-relaxed">
                   When I'm not coding, I actively explore emerging security vulnerabilities, learn penetration testing frameworks, and build interactive projects that solve real-world problems.
                 </p>
               </CardContent>
@@ -79,14 +79,14 @@ export const About = () => {
                 whileHover={{ x: 6 }}
                 transition={{ duration: 0.2 }}
               >
-                <Card className="bg-slate-900/60 border-slate-800/80 backdrop-blur-xl hover:border-cyan-500/40 hover:shadow-[0_0_20px_rgba(56,189,248,0.15)] transition-all duration-300">
+                <Card className="bg-slate-800/70 border-slate-700/60 backdrop-blur-xl hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(56,189,248,0.2)] transition-all duration-300">
                   <CardContent className="p-5 flex items-center gap-4">
                     <div className="p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20 shrink-0">
                       {item.icon}
                     </div>
                     <div>
                       <h4 className="text-xs uppercase tracking-wider font-bold text-cyan-400 mb-1">{item.title}</h4>
-                      <p className="text-slate-200 text-sm md:text-base font-medium">{item.detail}</p>
+                      <p className="text-slate-100 text-sm md:text-base font-semibold">{item.detail}</p>
                     </div>
                   </CardContent>
                 </Card>

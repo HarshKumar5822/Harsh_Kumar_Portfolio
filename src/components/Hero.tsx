@@ -113,34 +113,36 @@ export const Hero = () => {
         >
           <Button
             asChild
-            className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-7 py-6 rounded-full shadow-[0_0_25px_rgba(56,189,248,0.4)] hover:shadow-[0_0_35px_rgba(56,189,248,0.6)] transform hover:-translate-y-0.5 transition-all duration-300"
+            className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-7 py-6 rounded-xl shadow-lg shadow-blue-600/25 transform hover:-translate-y-0.5 transition-all duration-200 border-none"
           >
             <a 
               href="/Harsh_Kumar_Resume.pdf" 
               download="Harsh_Kumar_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm"
+              className="flex items-center gap-2 text-sm text-white"
             >
-              <Download size={18} className="stroke-[2.5]" />
+              <Download size={18} className="text-white" />
               Download Resume
             </a>
           </Button>
+
           <Button
-            variant="outline"
             asChild
-            className="border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-400 px-7 py-6 rounded-full transition-all duration-300 text-sm font-semibold"
+            className="bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white border border-cyan-500/40 font-semibold px-7 py-6 rounded-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            <a href="#projects" className="flex items-center gap-2">
+            <a href="#projects" className="flex items-center gap-2 text-sm text-cyan-300 hover:text-white">
               View Projects <ArrowRight size={16} />
             </a>
           </Button>
+
           <Button
-            variant="outline"
             asChild
-            className="border-purple-500/40 text-purple-400 hover:bg-purple-500/10 hover:border-purple-400 px-7 py-6 rounded-full transition-all duration-300 text-sm font-semibold"
+            className="bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700 font-semibold px-7 py-6 rounded-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            <a href="#contact">Get In Touch</a>
+            <a href="#contact" className="flex items-center gap-2 text-sm text-slate-200 hover:text-white">
+              Get In Touch
+            </a>
           </Button>
         </motion.div>
 

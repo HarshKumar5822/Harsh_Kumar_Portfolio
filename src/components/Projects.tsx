@@ -184,8 +184,7 @@ export const Projects = () => {
                   <div className="mt-auto flex flex-col sm:flex-row gap-2.5 pt-4 border-t border-slate-800/60">
                     <Button
                       asChild
-                      variant="outline"
-                      className={`border-cyan-500/40 text-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 hover:border-cyan-400 ${
+                      className={`bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white border border-cyan-500/40 rounded-xl ${
                         project.demoUrl ? "flex-1" : "w-full"
                       }`}
                     >
@@ -193,7 +192,7 @@ export const Projects = () => {
                         href={project.githubUrl || "https://github.com/HarshKumar5822"} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 text-xs font-semibold"
+                        className="flex items-center justify-center gap-2 text-xs font-semibold text-cyan-300 hover:text-white"
                       >
                         <Github size={15} />
                         View GitHub
@@ -202,13 +201,13 @@ export const Projects = () => {
                     {project.demoUrl && (
                       <Button
                         asChild
-                        className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold shadow-[0_0_15px_rgba(56,189,248,0.3)]"
+                        className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl shadow-md shadow-blue-600/25"
                       >
                         <a 
                           href={project.demoUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-2 text-xs font-bold"
+                          className="flex items-center justify-center gap-2 text-xs font-semibold text-white"
                         >
                           <ExternalLink size={15} />
                           View Demo

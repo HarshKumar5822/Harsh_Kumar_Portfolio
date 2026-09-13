@@ -4,9 +4,24 @@ import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const titles = [
-  "MERN Stack Developer",
-  "Cyber Security Specialist",
-  "Python Full Stack Developer",
+  {
+    text: "MERN Stack Developer",
+    colorClass: "bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-300 bg-clip-text text-transparent",
+    borderClass: "border-cyan-500/50",
+    cursorClass: "bg-cyan-400",
+  },
+  {
+    text: "Cyber Security Specialist",
+    colorClass: "bg-gradient-to-r from-emerald-400 via-green-400 to-teal-300 bg-clip-text text-transparent",
+    borderClass: "border-emerald-500/50",
+    cursorClass: "bg-emerald-400",
+  },
+  {
+    text: "Python Full Stack Developer",
+    colorClass: "bg-gradient-to-r from-purple-400 via-pink-400 to-amber-300 bg-clip-text text-transparent",
+    borderClass: "border-purple-500/50",
+    cursorClass: "bg-purple-400",
+  },
 ];
 
 export const Hero = () => {
@@ -14,20 +29,20 @@ export const Hero = () => {
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  useEffect(() => {
-    const currentTitle = titles[titleIndex];
+  const activeTitle = titles[titleIndex];
 
+  useEffect(() => {
     const handleTyping = () => {
       if (!isDeleting) {
-        if (currentText.length < currentTitle.length) {
-          setCurrentText(currentTitle.slice(0, currentText.length + 1));
+        if (currentText.length < activeTitle.text.length) {
+          setCurrentText(activeTitle.text.slice(0, currentText.length + 1));
         } else {
           setTimeout(() => setIsDeleting(true), 1800);
           return;
         }
       } else {
         if (currentText.length > 0) {
-          setCurrentText(currentTitle.slice(0, currentText.length - 1));
+          setCurrentText(activeTitle.text.slice(0, currentText.length - 1));
         } else {
           setIsDeleting(false);
           setTitleIndex((prev) => (prev + 1) % titles.length);
@@ -40,7 +55,7 @@ export const Hero = () => {
     const timer = setTimeout(handleTyping, speed);
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, titleIndex]);
+  }, [currentText, isDeleting, activeTitle]);
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4">
@@ -73,12 +88,12 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-xl md:text-3xl font-semibold text-gray-200 mb-6 h-10 flex items-center justify-center gap-1"
+          className="text-xl md:text-3xl font-bold mb-6 h-10 flex items-center justify-center gap-1"
         >
-          <span className="text-blue-400 border-b-2 border-blue-500/50 pb-0.5 min-h-[36px] inline-block">
+          <span className={`${activeTitle.colorClass} border-b-2 ${activeTitle.borderClass} pb-0.5 min-h-[36px] inline-block transition-all duration-300`}>
             {currentText}
           </span>
-          <span className="w-0.5 h-7 bg-blue-400 inline-block animate-pulse"></span>
+          <span className={`w-0.5 h-7 ${activeTitle.cursorClass} inline-block animate-pulse`}></span>
         </motion.p>
 
         <motion.p

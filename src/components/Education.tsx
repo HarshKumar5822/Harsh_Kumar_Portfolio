@@ -10,7 +10,7 @@ export const Education = () => {
       institution: "Malla Reddy University",
       location: "Hyderabad, India",
       duration: "2023 - 2027",
-      grade: "CGPA: 8.39/10.0",
+      grade: "CGPA: 8.50/10.0",
       status: "Current",
       description: "Specializing in Cyber Security with focus on network security, penetration testing, and secure application development.",
     },

@@ -41,19 +41,19 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 bg-slate-900/30">
+    <section id="skills" className="py-10 md:py-12 px-4 bg-slate-900/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6 md:mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">My Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">My Skills</h2>
           <div className="w-20 h-1 bg-blue-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6 gap-y-10 md:gap-y-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,17 +61,17 @@ export const Skills = () => {
             transition={{ delay: 0.2 }}
           >
             <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm h-full">
-              <CardHeader>
-                <CardTitle className="text-blue-400">Technical Skills</CardTitle>
+              <CardHeader className="p-4 pb-2">
+                <CardTitle className="text-blue-400 text-xl font-semibold">Technical Skills</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {technicalSkills.map((skill, index) => (
+              <CardContent className="p-4 pt-1 space-y-2.5">
+                {technicalSkills.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
+                    <div className="flex justify-between mb-1 text-sm font-medium">
                       <span className="text-gray-300">{skill.name}</span>
                       <span className="text-blue-400">{skill.level}%</span>
                     </div>
-                    <Progress value={skill.level} className="h-2" />
+                    <Progress value={skill.level} className="h-1.5" />
                   </div>
                 ))}
               </CardContent>
@@ -85,17 +85,17 @@ export const Skills = () => {
             transition={{ delay: 0.4 }}
           >
             <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm h-full">
-              <CardHeader>
-                <CardTitle className="text-blue-400">Cyber Security Skills</CardTitle>
+              <CardHeader className="p-4 pb-2">
+                <CardTitle className="text-blue-400 text-xl font-semibold">Cyber Security Skills</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {cyberSecuritySkills.map((skill, index) => (
+              <CardContent className="p-4 pt-1 space-y-2.5">
+                {cyberSecuritySkills.map((skill) => (
                   <div key={skill.name}>
-                    <div className="flex justify-between mb-2">
+                    <div className="flex justify-between mb-1 text-sm font-medium">
                       <span className="text-gray-300">{skill.name}</span>
                       <span className="text-blue-400">{skill.level}%</span>
                     </div>
-                    <Progress value={skill.level} className="h-2" />
+                    <Progress value={skill.level} className="h-1.5" />
                   </div>
                 ))}
               </CardContent>
@@ -109,17 +109,17 @@ export const Skills = () => {
             transition={{ delay: 0.6 }}
           >
             <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm h-full">
-              <CardHeader>
-                <CardTitle className="text-blue-400">Soft Skills</CardTitle>
+              <CardHeader className="p-4 pb-2">
+                <CardTitle className="text-blue-400 text-xl font-semibold">Soft Skills</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-3">
-                  {softSkills.map((skill, index) => (
+              <CardContent className="p-4 pt-1">
+                <div className="grid grid-cols-2 gap-2.5">
+                  {softSkills.map((skill) => (
                     <div
                       key={skill}
-                      className="bg-blue-500/10 rounded-lg p-3 text-center border border-blue-500/20"
+                      className="bg-blue-500/10 rounded-lg p-2.5 text-center border border-blue-500/20"
                     >
-                      <span className="text-gray-300 text-sm">{skill}</span>
+                      <span className="text-gray-300 text-xs sm:text-sm">{skill}</span>
                     </div>
                   ))}
                 </div>
@@ -134,17 +134,17 @@ export const Skills = () => {
             transition={{ delay: 0.8 }}
           >
             <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm h-full">
-              <CardHeader>
-                <CardTitle className="text-blue-400">Tools & Technologies</CardTitle>
+              <CardHeader className="p-4 pb-2">
+                <CardTitle className="text-blue-400 text-xl font-semibold">Tools & Technologies</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 gap-3">
-                  {tools.map((tool, index) => (
+              <CardContent className="p-4 pt-1">
+                <div className="grid grid-cols-2 gap-2.5">
+                  {tools.map((tool) => (
                     <div
                       key={tool}
-                      className="bg-purple-500/10 rounded-lg p-3 text-center border border-purple-500/20"
+                      className="bg-purple-500/10 rounded-lg p-2.5 text-center border border-purple-500/20"
                     >
-                      <span className="text-gray-300 text-sm">{tool}</span>
+                      <span className="text-gray-300 text-xs sm:text-sm">{tool}</span>
                     </div>
                   ))}
                 </div>

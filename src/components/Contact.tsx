@@ -182,7 +182,7 @@ export const Contact = () => {
           className="text-center mt-16 pt-8 border-t border-blue-500/20"
         >
           <p className="text-gray-400">
-            © 2024 Harsh Kumar. Built with React, TypeScript, and Tailwind CSS.
+            © 2026 Harsh Kumar
           </p>
         </motion.div>
       </div>

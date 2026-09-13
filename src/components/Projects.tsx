@@ -3,44 +3,105 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  category: string;
+  highlights: string[];
+  githubUrl?: string;
+  demoUrl?: string;
+}
 
 export const Projects = () => {
-  const projects = [
+  const projects: Project[] = [
+    {
+      title: "CodeGalaxy",
+      description: "An immersive, gamified, and AI-driven interactive programming platform built on the MERN stack. Features real-time Agentic AI code copilot & repair engine, solar-system skill tree, interactive algorithm visualizers, AI interview simulator, and multimodal RAG document analysis.",
+      technologies: ["React 18", "Node.js", "Express.js", "MongoDB", "Agentic AI", "Groq AI", "Gemini AI", "RAG"],
+      category: "MERN Stack + AI",
+      highlights: [
+        "Gamified Solar System Skill Tree & Level Map",
+        "Agentic AI Copilot & Automated Code Repair Engine",
+        "Nebula Forge (Dynamic AI Challenge Generator)",
+        "AI Technical Interview Simulator & Live Evaluator",
+        "Interactive Algorithm & Data Structure Visualizer",
+        "Multimodal RAG Document & Image Analyzer",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/CodeGalaxy-An-Agentic-AI-Based-Interactive-Programming-Learning-Platform",
+      demoUrl: "https://code-galaxy-an-agentic-ai-based-int.vercel.app/",
+    },
     {
       title: "FinGenius",
-      description: "A comprehensive financial tracking application that helps users manage their budget using the 50/30/20 rule (50% for needs, 30% for wants, 20% for savings). Features goal setting, expense tracking, and financial insights.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js"],
-      category: "MERN Stack",
-      highlights: ["Budget Management", "Goal Setting", "Financial Analytics", "50/30/20 Rule Implementation"],
+      description: "An intelligent full-stack AI-powered personal & family financial management suite. Features GeniusAI advisor powered by Groq LLaMA-3.3-70B, automated PDF/CSV bank statement parsing, 50/30/20 budget engine, and family financial collaboration.",
+      technologies: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB", "Groq AI"],
+      category: "MERN Stack + AI",
+      highlights: [
+        "GeniusAI Assistant (Groq LLaMA 3.3 70B)",
+        "AI Bank Statement Parser (PDF & CSV)",
+        "Dynamic 50/30/20 Budgeting Engine",
+        "Family Circle & Portfolio Tracking",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/FinGenius---Finance-Management-Application",
+      demoUrl: "https://fin-genius-finance-management-appli.vercel.app/",
     },
     {
       title: "EduMatch",
-      description: "A smart college recommendation system that helps students find the best colleges based on their EAMCET rank. Provides detailed college information, cut-off trends, and admission guidance.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js"],
-      category: "MERN Stack",
-      highlights: ["College Recommendation", "Rank Analysis", "Cut-off Predictions", "Admission Guidance"],
+      description: "An AI-powered EAPCET/EAMCET engineering college predictor & counselling portal built on the MERN stack. Features Groq LLM (Llama-3.3-70B) admission chatbot, client-side rank card OCR scanner, ROI predictor, and interactive web options builder.",
+      technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "Groq AI", "Tesseract.js"],
+      category: "MERN Stack + AI",
+      highlights: [
+        "EduBot AI Counselling Chatbot (Groq LLM)",
+        "In-Browser Rank Card Scanner (Tesseract.js OCR)",
+        "Smart Branch Matcher & AI ROI Predictor",
+        "Interactive Web Options Priority Builder",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/EduMatch-College_Finder-",
     },
     {
       title: "HostelMate",
-      description: "A hostel finding platform that allows students to search for hostels based on location, budget, room type, and facilities. Features detailed hostel profiles and booking management.",
-      technologies: ["React.js", "Node.js", "MongoDB", "Express.js"],
-      category: "MERN Stack",
-      highlights: ["Location-based Search", "Budget Filtering", "Facility Comparison", "Booking System"],
+      description: "A modern, full-stack hostel discovery & comparison platform for students & working professionals in India. Features smart multi-filter search, interactive map view, side-by-side hostel comparisons with photo lightbox, AI recommendation assistant, dynamic Value Score algorithm, and owner analytics dashboard.",
+      technologies: ["React 18", "TypeScript", "Node.js", "Express.js", "MongoDB", "TailwindCSS"],
+      category: "MERN Stack + AI",
+      highlights: [
+        "Smart Discovery & Multi-Filter Search",
+        "Interactive Map View & Hover Cards",
+        "Side-by-Side Comparison & Lightbox Gallery",
+        "Dynamic 'Bang for your Buck' Value Score",
+        "AI Hostel Assistant & Recommendations",
+        "Hostel Owner Dashboard & Direct Enquiry",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/HostelMate---A-Hostel-Finder-Application",
+      demoUrl: "https://hostel-mate-a-hostel-finder-ten.vercel.app/",
     },
     {
       title: "Zosh Food",
-      description: "A complete online food delivery application with integrated payment gateway. Features restaurant management, order tracking, and secure payment processing.",
-      technologies: ["Java", "Spring Boot", "HTML", "CSS", "JavaScript"],
+      description: "An enterprise-grade full-stack online food ordering & restaurant management system. Features JWT authentication, Stripe payment gateway, dynamic menu customizer, live order tracking, and multi-tier role administration.",
+      technologies: ["Java 17", "Spring Boot 3", "Spring Security", "React 18", "Redux", "Material UI", "Stripe API", "MySQL"],
       category: "Full Stack Java",
-      highlights: ["Payment Gateway", "Order Management", "Restaurant Portal", "Real-time Tracking"],
+      highlights: [
+        "Stripe Payment Gateway Integration",
+        "JWT Auth & Multi-Tier Role Management",
+        "Restaurant & Categorized Menu Admin",
+        "Real-Time Cart & Live Order Tracking",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/Zosh-Food-Online-Food-Delivery-App",
     },
     {
       title: "MediReminder",
-      description: "A medicine reminder application that helps users manage their medication schedule. Features customizable reminders, dosage tracking, and notification systems.",
-      technologies: ["Python", "Backend Development"],
-      category: "Python Application",
-      highlights: ["Medication Scheduling", "Custom Reminders", "Dosage Tracking", "Notification System"],
+      description: "A complete full-stack medication reminder application featuring secure user authentication, interactive medication management, and daily dosage schedule tracking with real-time status updates.",
+      technologies: ["Python", "FastAPI", "SQLite", "React.js", "TypeScript", "JWT Auth"],
+      category: "Full Stack Python",
+      highlights: [
+        "User Authentication (JWT & Hashed Security)",
+        "Medication Management (Add, View & Delete)",
+        "Daily Reminders & Dosage Status Tracking",
+        "Responsive Modern Design & Real-Time Updates",
+      ],
+      githubUrl: "https://github.com/HarshKumar5822/Medi-Reminder---Sem1-Project-",
+      demoUrl: "https://medi-reminder-sem1-project-j9pu.vercel.app/",
     },
   ];
 
@@ -115,22 +176,40 @@ export const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="mt-auto">
+                  <div className="mt-auto flex flex-col sm:flex-row gap-2 pt-2">
                     <Button
                       asChild
                       variant="outline"
-                      className="w-full border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white"
+                      className={`border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white ${
+                        project.demoUrl ? "flex-1" : "w-full"
+                      }`}
                     >
                       <a 
-                        href="https://github.com/HarshKumar5822" 
+                        href={project.githubUrl || "https://github.com/HarshKumar5822"} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2"
+                        className="flex items-center justify-center gap-2 text-sm"
                       >
                         <Github size={16} />
                         View on GitHub
                       </a>
                     </Button>
+                    {project.demoUrl && (
+                      <Button
+                        asChild
+                        className="flex-1 bg-blue-600 hover:bg-blue-700 text-white"
+                      >
+                        <a 
+                          href={project.demoUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-2 text-sm"
+                        >
+                          <ExternalLink size={16} />
+                          View Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

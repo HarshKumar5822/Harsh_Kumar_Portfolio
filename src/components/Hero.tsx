@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -12,11 +12,11 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <div className="w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+          <div className="w-52 h-52 md:w-64 md:h-64 mx-auto mb-6 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl shadow-blue-500/30 ring-4 ring-blue-500/20 group">
             <img 
               src="/lovable-uploads/d42bfd05-3fe0-45e6-87d0-2fcb62bc8e3e.png" 
               alt="Harsh Kumar"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
             />
           </div>
         </motion.div>
@@ -57,14 +57,30 @@ export const Hero = () => {
         >
           <Button
             asChild
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 shadow-lg shadow-blue-500/25"
+          >
+            <a 
+              href="/Harsh_Kumar_Resume.pdf" 
+              download="Harsh_Kumar_Resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2"
+            >
+              <Download size={18} />
+              Download Resume
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            asChild
+            className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 transition-all duration-300"
           >
             <a href="#contact">Get In Touch</a>
           </Button>
           <Button
             variant="outline"
             asChild
-            className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3"
+            className="border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-6 py-3 transition-all duration-300"
           >
             <a href="#projects">View My Work</a>
           </Button>

@@ -28,7 +28,7 @@ export const About = () => {
                 <h3 className="text-2xl font-bold text-white mb-4">My Journey</h3>
                 <p className="text-gray-300 mb-4">
                   I'm a passionate 4th-year Cyber Security student at Malla Reddy University, 
-                  Hyderabad, with a current CGPA of 8.39. Originally from Jharkhand, I've embraced 
+                  Hyderabad, with a current CGPA of 8.50. Originally from Jharkhand, I've embraced 
                   the tech culture of Hyderabad while pursuing my dreams in cybersecurity and web development.
                 </p>
                 <p className="text-gray-300 mb-4">
@@ -76,7 +76,7 @@ export const About = () => {
             <Card className="bg-slate-800/50 border-blue-500/20 backdrop-blur-sm">
               <CardContent className="p-6">
                 <h4 className="text-lg font-semibold text-blue-400 mb-2">CGPA</h4>
-                <p className="text-gray-300">8.39 / 10.0</p>
+                <p className="text-gray-300">8.50 / 10.0</p>
               </CardContent>
             </Card>
           </motion.div>
